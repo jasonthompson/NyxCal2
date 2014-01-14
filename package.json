@@ -1,0 +1,29 @@
+{
+  "name": "NyxCal",
+  "version": "0.0.1",
+  "description": "Self hosted online calendar.",
+  "author": "Jason Thompson <jason@jthompson.ca>",
+  "homepage": "http://github.com/jasonthompson/NyxCalRiot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonthompson/NyxCalRiot"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "dependencies": {
+    "moment": "<= 2.5.0"
+  },
+
+  "devDependencies": {
+    "mocha": "latest",
+    "jshint": "latest",
+    "shelljs": "latest",
+    "chai": "latest"
+  }
+}
+
+
