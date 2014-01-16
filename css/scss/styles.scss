@@ -1,0 +1,44 @@
+$cal-border-color: 1px solid #555;
+
+body {
+  background: #fff;
+  font-family: Helvetica, sans;
+  color: $cal-border-color;
+  h1 {
+    padding-left: .5em;
+  }
+}
+
+header#main {
+  background:#222;
+  color:#eee;
+  h1 {
+    font-size:1.55em;
+    font-weight:bold;
+    padding:.5em 0 .5em .5em;
+  }
+}
+table {
+  width:90%;
+  border-collapse: collapse;
+  margin-left:1em;
+  th {
+    text-align: left;
+    padding:.5em .5em 0 .5em;
+  }
+
+  thead {
+    border:0;
+  }
+
+  td {
+    border:$cal-border-color;
+    height:100px;
+    width:14%;
+    vertical-align: top;
+
+    .calDate {
+      font-size: .85em;
+    }
+  }
+}

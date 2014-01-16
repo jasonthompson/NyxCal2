@@ -1,4 +1,6 @@
 function Calendar(month, year){
+  "use strict";
+
   // eventually need self for $.observable(this)
   var self = this;
 
@@ -15,7 +17,7 @@ function Calendar(month, year){
 
   self.week = function(number){
     number -= 1;
-    weeks = [[0,6],[7,13],[14,20],[21,27],[28,34]]
+    var weeks = [[0,6],[7,13],[14,20],[21,27],[28,34]];
     var firstDay = weeks[number][0];
     var lastDay = weeks[number][1];
     return self.days().slice(firstDay, lastDay + 1);
@@ -26,9 +28,9 @@ function Calendar(month, year){
     var daysList = [];
 
     for (var i = 0; i <= 34; i++){
-      daysList[i] = {date: moment(date).format('MMMM D, YYYY')},
+      daysList[i] = {date: moment(date).format('D')};
       date.add(1, 'd');
-    };
+    }
     return daysList;
   };
 
@@ -41,6 +43,6 @@ function Calendar(month, year){
     var pm = moment(self.first.subtract(1, 'M'));
     return new self.constructor(pm.format('MMMM'), pm.year());
   };
-};
+}
 
 module.exports = Calendar;
