@@ -27,7 +27,7 @@ module.exports = (function() {
     var week = $($.parseHTML('<tr></tr>'));
 
     $.each(calendar.week(weekNum), function(i, day){
-      week.append('<td>' + day.date + '</td>');
+      week.append('<td>' + day.date.format('D') + '</td>');
     });
 
     currentMonth.find('#month-view').append(week);

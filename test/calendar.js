@@ -4,6 +4,7 @@ Calendar = require('../src/calendar');
 describe('Calendar', function(){
   beforeEach(function(){
     january = new Calendar("January", 2014);
+    dateFormat = 'MMMM D, YYYY'; 
   });
 
   describe('month', function(){
@@ -37,7 +38,7 @@ describe('Calendar', function(){
     });
 
     it('should have the correct dates', function(){
-      january.days()[34].date.should.equal('February 1, 2014');
+      january.days()[34].date.format(dateFormat).should.equal('February 1, 2014');
     });
   });
 
@@ -61,23 +62,23 @@ describe('Calendar', function(){
     describe('week(1)', function(){
       it('should return an Array of first week', function(){
         january.week(1).should.be.a('Array');
-        january.week(1)[0].date.should.equal('December 29, 2013');
-        january.week(1)[6].date.should.equal('January 4, 2014');
+        january.week(1)[0].date.format(dateFormat).should.equal('December 29, 2013');
+        january.week(1)[6].date.format(dateFormat).should.equal('January 4, 2014');
       });
     });
 
     describe('week(5)', function(){
       it('should return and Array of fifth week', function(){
         january.week(5).should.be.a('Array');
-        january.week(5)[0].date.should.equal('January 26, 2014');
-        january.week(5)[6].date.should.equal('February 1, 2014');
+        january.week(5)[0].date.format(dateFormat).should.equal('January 26, 2014');
+        january.week(5)[6].date.format(dateFormat).should.equal('February 1, 2014');
       });
     });
 
   });
   describe('#get', function(){
     it('should return month for given month and year', function(){
-      var march = january.get('March', 2014);
+      var march = Calendar.get('March', 2014);
       march.month.should.equal('March');
       march.year.should.equal(2014);
     });

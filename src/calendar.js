@@ -1,4 +1,4 @@
-function Calendar(month, year){
+module.exports = function Calendar(month, year){
   "use strict";
 
   // eventually need self for $.observable(this)
@@ -28,25 +28,25 @@ function Calendar(month, year){
     var daysList = [];
 
     for (var i = 0; i <= 34; i++){
-      daysList[i] = {date: moment(date).format('MMMM D, YYYY')};
+      daysList[i] = {date: moment(date)};
       date.add(1, 'd');
     }
-    return daysList;
-  };
 
-  self.get = function(nMonth, nYear){
-    return new self.constructor(nMonth, nYear);
+    return daysList;
   };
 
   self.nextMonth = function(){
     var nm = moment(self.first.add(1, 'M'));
-    return new self.constructor(nm.format('MMMM'), nm.year());
+    return self.constructor.get(nm.format('MMMM'), nm.year());
   };
 
   self.previousMonth = function(){
     var pm = moment(self.first.subtract(1, 'M'));
-    return new self.constructor(pm.format('MMMM'), pm.year());
+    return self.constructor.get(pm.format('MMMM'), pm.year());
   };
-}
 
-module.exports = Calendar;
+  // "Class" method.
+  self.constructor.get = function(newMonth, newYear){
+    return new self.constructor(newMonth, newYear);
+  };
+};
