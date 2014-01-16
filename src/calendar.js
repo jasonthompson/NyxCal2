@@ -28,10 +28,14 @@ function Calendar(month, year){
     var daysList = [];
 
     for (var i = 0; i <= 34; i++){
-      daysList[i] = {date: moment(date).format('D')};
+      daysList[i] = {date: moment(date).format('MMMM D, YYYY')};
       date.add(1, 'd');
     }
     return daysList;
+  };
+
+  self.get = function(nMonth, nYear){
+    return new self.constructor(nMonth, nYear);
   };
 
   self.nextMonth = function(){

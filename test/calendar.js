@@ -1,9 +1,9 @@
 var should = require('chai').should(),
-calendar = require('../src/calendar');
+Calendar = require('../src/calendar');
 
 describe('Calendar', function(){
   beforeEach(function(){
-    january = new calendar("January", 2014);
+    january = new Calendar("January", 2014);
   });
 
   describe('month', function(){
@@ -72,6 +72,14 @@ describe('Calendar', function(){
         january.week(5)[0].date.should.equal('January 26, 2014');
         january.week(5)[6].date.should.equal('February 1, 2014');
       });
+    });
+
+  });
+  describe('#get', function(){
+    it('should return month for given month and year', function(){
+      var march = january.get('March', 2014);
+      march.month.should.equal('March');
+      march.year.should.equal(2014);
     });
   });
 });
