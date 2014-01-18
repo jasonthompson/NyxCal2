@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     browserify: {
       basic: {
-        src: ['src/*.js'],
+        src: ['src/**/*.js'],
         dest: 'dist/nyx-cal.js'
       }
     },
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
         tasks: ['sass'],
       },
       js: {
-        files: ['src/*.js', 'src/**/*.js'],
+        files: ['src/**/*.js', 'test/**/*.js'],
         tasks: ['default'],
       },
       livereload: {
