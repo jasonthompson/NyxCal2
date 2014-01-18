@@ -1,4 +1,4 @@
-$cal-border-color: 1px solid #555;
+$cal-border-color: #666;
 
 body {
   background: #fff;
@@ -24,21 +24,25 @@ table {
   margin-left:1em;
   th {
     text-align: left;
-    padding:.5em .5em 0 .5em;
+    padding:.5em .5em 0 0.25em;
+    color:#222;
+    font-size: .85em;
   }
 
   thead {
     border:0;
   }
+  tbody#month-display {
+    td {
+      height:100px;
+      width:14%;
+      vertical-align: top;
+      border:1px solid $cal-border-color;
 
-  td {
-    border:$cal-border-color;
-    height:100px;
-    width:14%;
-    vertical-align: top;
-
-    .calDate {
-      font-size: .85em;
+      .calendar-date {
+        font-size: .80em;
+        padding: 0 0 0 .25em;
+      }
     }
   }
 }

@@ -1,16 +1,16 @@
-var should = require('chai').should(),
-Calendar = require('../src/calendar');
+var should = require('chai').should();
+var Calendar = require('../src/models/calendar');
 
 describe('Calendar', function(){
   beforeEach(function(){
+    $ = require('../bower_components/riotjs/riot.js');
     january = new Calendar("January", 2014);
     dateFormat = 'MMMM D, YYYY'; 
   });
 
   describe('month', function(){
-    it('should return correct month and year', function(){
+    it('should return correct month capitalized', function(){
       january.month.should.equal('January');
-      january.year.should.equal(2014);
     });
   });
 
@@ -75,12 +75,5 @@ describe('Calendar', function(){
       });
     });
 
-  });
-  describe('#get', function(){
-    it('should return month for given month and year', function(){
-      var march = Calendar.get('March', 2014);
-      march.month.should.equal('March');
-      march.year.should.equal(2014);
-    });
   });
 });

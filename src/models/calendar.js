@@ -2,13 +2,14 @@ module.exports = function Calendar(month, year){
   "use strict";
 
   // eventually need self for $.observable(this)
-  var self = this;
+  var self = $.observable(this);
+  var moment = require('../../node_modules/moment');
 
-  var moment = require('../node_modules/moment');
 
   self.month = month;
   self.year = year;
   self.first = moment(month + " 1, " + year);
+
 
   self.firstOfCalendar = function(){
     var offset = self.first.day();
@@ -37,16 +38,20 @@ module.exports = function Calendar(month, year){
 
   self.nextMonth = function(){
     var nm = moment(self.first.add(1, 'M'));
-    return self.constructor.get(nm.format('MMMM'), nm.year());
+    return self.constructor.load(nm.format('MMMM'), nm.year());
   };
 
   self.previousMonth = function(){
     var pm = moment(self.first.subtract(1, 'M'));
-    return self.constructor.get(pm.format('MMMM'), pm.year());
+    return self.constructor.load(pm.format('MMMM'), pm.year());
   };
 
-  // "Class" method.
-  self.constructor.get = function(newMonth, newYear){
-    return new self.constructor(newMonth, newYear);
+  self.newMonth = function(month, year){
+    self.trigger('new-month');
+    return new self.constructor(month, year);
+  };
+
+  self.constructor.load = function(month, year){
+    return new self.constructor(month, year);
   };
 };

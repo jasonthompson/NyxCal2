@@ -1,7 +1,7 @@
 body {
   background: #fff;
   font-family: Helvetica, sans;
-  color: 1px solid #555555; }
+  color: #666666; }
   body h1 {
     padding-left: .5em; }
 
@@ -19,13 +19,16 @@ table {
   margin-left: 1em; }
   table th {
     text-align: left;
-    padding: .5em .5em 0 .5em; }
+    padding: .5em .5em 0 0.25em;
+    color: #222;
+    font-size: .85em; }
   table thead {
     border: 0; }
-  table td {
-    border: 1px solid #555555;
+  table tbody#month-display td {
     height: 100px;
     width: 14%;
-    vertical-align: top; }
-    table td .calDate {
-      font-size: .85em; }
+    vertical-align: top;
+    border: 1px solid #666666; }
+    table tbody#month-display td .calendar-date {
+      font-size: .80em;
+      padding: 0 0 0 .25em; }
