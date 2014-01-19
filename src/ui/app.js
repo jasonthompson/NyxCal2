@@ -6,6 +6,10 @@ module.exports = (function() {
   var Calendar = require('../models/calendar');
   var root = $('#nyxcal-app');
 
+  $('#left-nav').click(function(){
+    return $.route($(this).attr('href'));
+  });
+
   $.route(function(hash) {
 
     var presentCalendarView = require('./calendar-view');

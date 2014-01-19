@@ -1,22 +1,15 @@
 $cal-border-color: #666;
-
+$body-font: "calibri", "helvetica", sans;
 body {
   background: #fff;
-  font-family: Helvetica, sans;
+  font-family: $body-font;
+  font-variant-numeric: oldstyle-nums;
   color: $cal-border-color;
-  h1 {
-    padding-left: .5em;
-  }
 }
 
 header#main {
   background:#222;
   color:#eee;
-  h1 {
-    font-size:1.55em;
-    font-weight:bold;
-    padding:.5em 0 .5em .5em;
-  }
 }
 table {
   width:90%;
@@ -45,4 +38,37 @@ table {
       }
     }
   }
+}
+
+.img-title {
+  display:flex;
+  margin:0.5em;
+  padding: 0.5em;
+  h1 {
+    margin:0 0 0 0.5em;
+    display:inline;
+  }
+}
+
+.arrow {
+  height: 1.5em;
+  margin: 0.1em .5em .5em .5em;
+  fill: $cal-border-color;
+  :hover {
+    fill:#aaa;
+  }
+}
+
+#arrow-left {
+  margin-right:-.5em;
+}
+
+#arrow-right {
+  margin-left:0.25em;
+}
+
+#nyx-logo {
+  height:2em;
+  fill:#000;
+  margin:0 -0.5em 0 0;
 }
