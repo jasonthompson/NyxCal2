@@ -39,6 +39,9 @@ table {
     }
   }
 }
+header h1 {
+  margin:0 0 -0 1em;
+}
 
 .img-title {
   display:flex;
@@ -52,7 +55,7 @@ table {
 
 .arrow {
   height: 1.5em;
-  margin: 0.1em .5em .5em .5em;
+  margin:0; 
   fill: $cal-border-color;
   :hover {
     fill:#aaa;
@@ -60,11 +63,10 @@ table {
 }
 
 #arrow-left {
-  margin-right:-.5em;
+  margin-left: 1.5em;
 }
 
 #arrow-right {
-  margin-left:0.25em;
 }
 
 #nyx-logo {

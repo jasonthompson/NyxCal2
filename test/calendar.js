@@ -44,17 +44,15 @@ describe('Calendar', function(){
 
   describe('nextMonth', function(){
     it('should return the next month', function(){
-      var feb = january.nextMonth();
-      feb.month.should.equal('February');
-      feb.year.should.equal(2014);
+      january.nextMonth().month.should.equal('February');
+      january.nextMonth().year.should.equal(2014);
     });
   });
 
   describe('previousMonth', function(){
     it('should return the previous month', function(){
-      var dec2013 = january.previousMonth();
-      dec2013.month.should.equal('December');
-      dec2013.year.should.equal(2013);
+      january.previousMonth().month.should.equal('December');
+      january.previousMonth().year.should.equal(2013);
     });
   });
 

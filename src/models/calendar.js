@@ -37,13 +37,13 @@ module.exports = function Calendar(month, year){
   };
 
   self.nextMonth = function(){
-    var nm = moment(self.first.add(1, 'M'));
-    return self.constructor.load(nm.format('MMMM'), nm.year());
+    var nm = moment(moment(self.first).add(1, 'M'));
+    return { month: nm.format('MMMM'), year: nm.year() };
   };
 
   self.previousMonth = function(){
-    var pm = moment(self.first.subtract(1, 'M'));
-    return self.constructor.load(pm.format('MMMM'), pm.year());
+    var pm = moment(moment(self.first).subtract(1, 'M'));
+    return { month: pm.format('MMMM'), year: pm.year() };
   };
 
   self.newMonth = function(month, year){
