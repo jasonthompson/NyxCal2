@@ -30,15 +30,20 @@ table {
       height:100px;
       width:14%;
       vertical-align: top;
+      background:#eee;
       border:1px solid $cal-border-color;
 
-      .calendar-date {
+      span.calendar-date {
         font-size: .80em;
         padding: 0 0 0 .25em;
       }
     }
   }
 }
+.today {
+  color:#000;
+  }
+
 header h1 {
   margin:0 0 -0 1em;
 }
