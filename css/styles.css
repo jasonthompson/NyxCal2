@@ -28,9 +28,13 @@ table {
     table tbody#month-display td span.calendar-date {
       font-size: .80em;
       padding: 0 0 0 .25em; }
-
-.today {
-  color: #000; }
+  table tbody#month-display td.today {
+    color: #000;
+    border: 2px solid #000; }
+  table tbody#month-display td.this-month {
+    background: #fff; }
+    table tbody#month-display td.this-month span.calendar-date {
+      color: #222; }
 
 header h1 {
   margin: 0 0 -0 1em; }
@@ -44,7 +48,7 @@ header h1 {
     display: inline; }
 
 .arrow {
-  height: 1.5em;
+  height: 1.25em;
   margin: 0;
   fill: #666666; }
   .arrow :hover {

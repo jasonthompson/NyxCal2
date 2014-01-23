@@ -1,15 +1,17 @@
 module.exports = function Calendar(month, year){
   "use strict";
 
+  var util = require("./util");
+
   // eventually need self for $.observable(this)
   var self = $.observable(this);
   var moment = require('../../node_modules/moment');
 
 
-  self.month = month;
+  self.month = util.capitalize(month);
   self.year = year;
+  self.monthYear = self.month + " " + self.year;
   self.first = moment(month + " 1, " + year);
-
 
   self.firstOfCalendar = function(){
     var offset = self.first.day();
