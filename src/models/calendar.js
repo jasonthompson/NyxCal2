@@ -52,8 +52,4 @@ module.exports = function Calendar(month, year){
     self.trigger('new-month');
     return new self.constructor(month, year);
   };
-
-  self.constructor.load = function(month, year){
-    return new self.constructor(month, year);
-  };
 };

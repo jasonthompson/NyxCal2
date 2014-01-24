@@ -9,7 +9,7 @@ module.exports = function CalendarView(calendar, root){
     this.root.find('#tbody#month-display').append(buildMonthView(this.calendar));
   };
 
-  var buildCalendarHeader = function(calendar){
+  function buildCalendarHeader(calendar){
     var pMonthPath = calendar.previousMonth().year + "/" + calendar.previousMonth().month;
     var nMonthPath = calendar.nextMonth().year + "/" +  calendar.nextMonth().month;
     var pMonth = pMonthPath.split('/').reverse().join(' ');
@@ -26,18 +26,18 @@ module.exports = function CalendarView(calendar, root){
 
     var calHeader = $($.render(calendarHeaderTmpl, headerInfo));
     return calHeader;
-  };
+  }
 
-  var buildMonthView = function(calendar){
+  function buildMonthView(calendar){
     var month = $('#month-display');
     month.empty();
     for (var i = 1; i <= 5; i++){
       month.append(buildWeekView(i, calendar));
     }
     return month;
-  };
+  }
 
-  var buildWeekView = function(weekNum, calendar){
+  function buildWeekView(weekNum, calendar){
     var week = $($.parseHTML('<tr id="week' + weekNum + '"></tr>'));
 
     $.each(calendar.week(weekNum), function(i, day){
@@ -45,6 +45,5 @@ module.exports = function CalendarView(calendar, root){
       week.append(theDay.render);
     });
     return week;
-  };
-
+  }
 };
