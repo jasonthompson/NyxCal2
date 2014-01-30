@@ -31,9 +31,11 @@ module.exports = function CalendarView(calendar, root){
   function buildMonthView(calendar){
     var month = $('#month-display');
     month.empty();
-    for (var i = 1; i <= 5; i++){
+
+    $.each(calendar.weeks(), function(i, val){
       month.append(buildWeekView(i, calendar));
-    }
+    });
+
     return month;
   }
 
