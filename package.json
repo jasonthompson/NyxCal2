@@ -32,6 +32,7 @@
     "grunt-browserify": "~1.3.0",
     "grunt-contrib-livereload": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-contrib-sass": "latest"
+    "grunt-contrib-sass": "latest",
+    "ical2json": "latest"
   }
 }

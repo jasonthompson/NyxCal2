@@ -3,3 +3,4 @@ bower_components
 dist
 .*.swp
 .sass-cache
+test/data/*
